@@ -55,6 +55,15 @@ void WeatherForecast::_parseNowJson(String payload) {
   _daily_sunrise_str[0] = daily_0["sunrise"].as<String>();
   _daily_sunrise_str[1] = daily_1["sunrise"].as<String>();
   _daily_sunrise_str[2] = daily_2["sunrise"].as<String>();
+  _daily_sunset_str[0] = daily_0["sunset"].as<String>();
+  _daily_sunset_str[1] = daily_1["sunset"].as<String>();
+  _daily_sunset_str[2] = daily_2["sunset"].as<String>();
+  _daily_moonrise_str[0] = daily_0["moonrise"].as<String>();
+  _daily_moonrise_str[1] = daily_1["moonrise"].as<String>();
+  _daily_moonrise_str[2] = daily_2["moonrise"].as<String>();
+  _daily_moonset_str[0] = daily_0["moonset"].as<String>();
+  _daily_moonset_str[1] = daily_1["moonset"].as<String>();
+  _daily_moonset_str[2] = daily_2["moonset"].as<String>();
   _daily_tempMax_int[0] = daily_0["tempMax"].as<int>();
   _daily_tempMax_int[1] = daily_1["tempMax"].as<int>();
   _daily_tempMax_int[2] = daily_2["tempMax"].as<int>();
@@ -97,6 +106,18 @@ String WeatherForecast::getLastUpdate() {
 // 返回日出时间
 String WeatherForecast::getSunRise(int index) {
   return _daily_sunrise_str[index];
+}
+
+String WeatherForecast::getSunSet(int index) {
+  return _daily_sunset_str[index];
+}
+
+String WeatherForecast::getMoonRise(int index) {
+  return _daily_moonrise_str[index];
+}
+
+String WeatherForecast::getMoonSet(int index) {
+  return _daily_moonset_str[index];
 }
 
 // 返回最高气温
